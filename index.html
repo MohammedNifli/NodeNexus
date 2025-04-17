@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <Button  id="custom">Event click</Button>
+    </div>
+
+    <script>
+        const handler=()=>{
+            console.log("An event occur when you clicked the button");
+
+        }
+
+        document.addEventListener("custom",handler)
+        document.getElementById('custom').addEventListener('click',()=>{
+            const eventHappen=new CustomEvent('custom');
+            document.dispatchEvent(eventHappen);
+        })
+
+
+    </script>
+</body>
+</html>
